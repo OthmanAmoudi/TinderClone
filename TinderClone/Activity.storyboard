@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="n46-oL-JOj">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Activity-->
+        <scene sceneID="Hr2-H8-0hW">
+            <objects>
+                <viewController id="bjy-27-mxr" customClass="ActivityViewController" customModule="TinderClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2wu-FU-93K"/>
+                        <viewControllerLayoutGuide type="bottom" id="yb6-zW-ZtA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DAB-94-BtR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Activity" id="87e-lo-7aR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="URu-dz-RYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1138" y="813"/>
+        </scene>
+        <!--Contacts-->
+        <scene sceneID="IX4-Cu-XP9">
+            <objects>
+                <viewController id="HZe-k8-ZVj" customClass="MatchesViewController" customModule="TinderClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="osW-kE-aPI"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vp9-ur-Oed"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xfm-Ab-mWW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Contacts" id="vJl-5s-nnE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mvp-T2-Xus" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2018" y="813"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="FZv-AD-qVa">
+            <objects>
+                <viewController id="veo-Qp-T9q" customClass="ProfileViewController" customModule="TinderClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L7Q-UV-nyK"/>
+                        <viewControllerLayoutGuide type="bottom" id="BCX-Qf-foU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G9F-OC-W4m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Profile" id="2lD-aN-7vb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iDu-RE-f8G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-234" y="813"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="xig-A7-qiB">
+            <objects>
+                <tabBarController id="n46-oL-JOj" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="HXK-QX-Aqa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="QUa-jF-rfO" kind="relationship" relationship="viewControllers" id="ZqA-xa-8AA"/>
+                        <segue destination="kUj-cr-2u5" kind="relationship" relationship="viewControllers" id="36H-a4-aIV"/>
+                        <segue destination="oWf-ot-Fxx" kind="relationship" relationship="viewControllers" id="2Rd-Xc-nZR"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ld7-6U-la7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1137" y="-719"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="J5W-rv-36c">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QUa-jF-rfO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile" selectedImage="Profile_Selected" id="uEe-Xm-cl1"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eNe-Gx-1US">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="veo-Qp-T9q" kind="relationship" relationship="rootViewController" id="0O4-Ph-mr9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rB0-sj-z99" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-234" y="68"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="whE-4c-SKK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kUj-cr-2u5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="Home" selectedImage="Home_Selected" id="DLJ-5G-epa"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KTI-gB-znT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bjy-27-mxr" kind="relationship" relationship="rootViewController" id="MYA-d9-v00"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ej-N2-aDO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1138" y="68"/>
+        </scene>
+        <!--Matchs-->
+        <scene sceneID="n5p-u8-NQQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oWf-ot-Fxx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Matchs" image="Search" selectedImage="Search_Selected" id="mEg-5J-e7n"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yd9-M2-IdX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HZe-k8-ZVj" kind="relationship" relationship="rootViewController" id="skQ-Ji-O3U"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VeS-ps-bFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2017" y="68"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Home" width="21" height="23"/>
+        <image name="Home_Selected" width="21" height="23"/>
+        <image name="Profile" width="20" height="21"/>
+        <image name="Profile_Selected" width="20" height="21"/>
+        <image name="Search" width="23" height="22"/>
+        <image name="Search_Selected" width="23" height="22"/>
+    </resources>
+</document>

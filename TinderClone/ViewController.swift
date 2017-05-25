@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Foundation
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -20,6 +20,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func fbLogin_DidPressed(_ sender: Any) {
+        
+        performSegue(withIdentifier: "ToHomeTabBarSegue", sender: nil)
+    }
 
 }
 
