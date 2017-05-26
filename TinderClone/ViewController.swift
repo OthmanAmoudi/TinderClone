@@ -9,9 +9,29 @@
 import UIKit
 import Foundation
 import Firebase
+import FirebaseAuth
 import FBSDKCoreKit
 import FBSDKLoginKit
 class ViewController: UIViewController , FBSDKLoginButtonDelegate {
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+       
+        let loginButton: FBSDKLoginButton = FBSDKLoginButton()
+        loginButton.readPermissions = ["public_profile", "email", "user_friends"]
+        loginButton.delegate = self
+        view.addSubview(loginButton)
+        loginButton.frame = CGRect(x: 18, y: 650, width: view.frame.width - 32, height: 50)
+       
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if Auth.auth().currentUser != nil{
+            goToProfile()
+        }
+    }
+    
     /**
      Sent to the delegate when the button was used to logout.
      - Parameter loginButton: The button that was clicked.
@@ -19,40 +39,43 @@ class ViewController: UIViewController , FBSDKLoginButtonDelegate {
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         dismiss(animated: true, completion: nil)
     }
-
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        var loginButton: FBSDKLoginButton = FBSDKLoginButton()
-        loginButton.readPermissions = ["public_profile", "email", "user_friends"]
-        loginButton.delegate = self
-        view.addSubview(loginButton)
-        loginButton.frame = CGRect(x: 18, y: 650, width: view.frame.width - 32, height: 50)
-       
-        
-        // Do any additional setup after loading the view, typically from a nib.
+    
+    func goToProfile(){
+        performSegue(withIdentifier: "ToHomeTabBarSegue", sender: nil)
     }
     
+    
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error?) {
+        loginButton.isHidden = true
+
         if let error = error {
             print(error.localizedDescription)
+            loginButton.isHidden = false
+
             return
         }
+        else if (result.isCancelled){
+            
+            loginButton.isHidden = false
+
+        }
+        
         else{
-        goToProfile()
+        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+            Auth.auth().signIn(with: credential) { (user, error) in
+          //let username = user?.displayName
+          //  print("@@@loggied User Name:\(username)")
+            self.goToProfile()
         }
     }
-    override func didReceiveMemoryWarning() {
+    func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     
-    func goToProfile(){
-        performSegue(withIdentifier: "ToHomeTabBarSegue", sender: nil)
-    }
+    
 
 }
 
-
+}
