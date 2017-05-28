@@ -75,9 +75,10 @@ class ProfileViewController: UIViewController, FBSDKLoginButtonDelegate {
             }
             else{
             if let dictionary = snapshot.value as? [String: Any]{
+            let bio = dictionary["caption"] as? String
             let picURL = dictionary["photoURL"] as? String
             let picURL2 = dictionary["photoURL2"] as? String
-                
+            self.bioTextCaption.text = bio
                 
           
             let storage = Storage.storage()

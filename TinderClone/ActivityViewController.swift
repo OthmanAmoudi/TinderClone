@@ -7,13 +7,30 @@
 //
 
 import UIKit
+import Firebase
+import ProgressHUD
 
 class ActivityViewController: UIViewController {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var genderLabel: UILabel!
+    @IBOutlet weak var ageRangeLabel: UILabel!
+    @IBOutlet weak var matchPhoto: UIImageView!
+    @IBOutlet weak var bioText: UILabel!
+    
+    let userID: String = Auth.auth().currentUser!.uid
+    var ref: DatabaseReference!
+    let dataBaseRef = Database.database().reference()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        getMatch()
+        
+        
+    }
+    
+    func getMatch(){
+        
     }
 
     override func didReceiveMemoryWarning() {
