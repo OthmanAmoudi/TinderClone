@@ -10,7 +10,8 @@ pod ‘Firebase/Core’
 pod ‘Firebase/Auth’
 pod ‘Firebase/Storage’
 pod ‘Firebase/Database’
-
+pod ‘Fusuma‘
+pod ‘ProgressHUD‘
 
   # Pods for TinderClone
 

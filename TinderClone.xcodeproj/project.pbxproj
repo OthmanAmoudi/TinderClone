@@ -21,9 +21,13 @@
 		490EA3F31ED716540031ADC5 /* GoogleToolboxForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490EA3F21ED716540031ADC5 /* GoogleToolboxForMac.framework */; };
 		490EA3F51ED716590031ADC5 /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490EA3F41ED716590031ADC5 /* GTMSessionFetcher.framework */; };
 		490EA3FF1ED722E80031ADC5 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490EA3FE1ED722E80031ADC5 /* FBSDKCoreKit.framework */; };
+		49CD9AB61ED98F1C00763D5E /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 49CD9AB31ED98F1C00763D5E /* ProgressHUD.bundle */; };
+		49CD9AB71ED98F1C00763D5E /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 49CD9AB51ED98F1C00763D5E /* ProgressHUD.m */; };
 		49D488371ED72AC600A64CDA /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D488361ED72AC600A64CDA /* FBSDKLoginKit.framework */; };
 		49D488391ED72AE100A64CDA /* FacebookSDKStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 49D488381ED72AE100A64CDA /* FacebookSDKStrings.bundle */; };
 		49D4883D1ED72B1C00A64CDA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D4883C1ED72B1C00A64CDA /* Bolts.framework */; };
+		49F4D90C1ED889CC00CE9282 /* Fusuma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F4D90B1ED889CC00CE9282 /* Fusuma.framework */; };
+		49F4D90E1ED889D200CE9282 /* ProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F4D90D1ED889D200CE9282 /* ProgressHUD.framework */; };
 		4C35A835A2DDD287393031C8 /* Pods_TinderClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2841C0681C427CAF05DA9437 /* Pods_TinderClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,9 +49,15 @@
 		490EA3F21ED716540031ADC5 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleToolboxForMac.framework; path = "Pods/../build/Debug-iphoneos/GoogleToolboxForMac/GoogleToolboxForMac.framework"; sourceTree = "<group>"; };
 		490EA3F41ED716590031ADC5 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GTMSessionFetcher.framework; path = "Pods/../build/Debug-iphoneos/GTMSessionFetcher/GTMSessionFetcher.framework"; sourceTree = "<group>"; };
 		490EA3FE1ED722E80031ADC5 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		49CD9AB21ED98F1C00763D5E /* TinderClone-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TinderClone-Bridging-Header.h"; sourceTree = "<group>"; };
+		49CD9AB31ED98F1C00763D5E /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ProgressHUD.bundle; path = ../../../../Desktop/ProgressHUD.bundle; sourceTree = "<group>"; };
+		49CD9AB41ED98F1C00763D5E /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProgressHUD.h; path = ../../../../Desktop/ProgressHUD.h; sourceTree = "<group>"; };
+		49CD9AB51ED98F1C00763D5E /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProgressHUD.m; path = ../../../../Desktop/ProgressHUD.m; sourceTree = "<group>"; };
 		49D488361ED72AC600A64CDA /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		49D488381ED72AE100A64CDA /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKStrings.bundle; path = ../../FacebookSDK/FacebookSDKStrings.bundle; sourceTree = "<group>"; };
 		49D4883C1ED72B1C00A64CDA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
+		49F4D90B1ED889CC00CE9282 /* Fusuma.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fusuma.framework; path = "../../../Library/Developer/Xcode/DerivedData/TinderClone-arbiujyzhpjoldakktligwyqgfpj/Build/Products/Debug-iphonesimulator/Fusuma/Fusuma.framework"; sourceTree = "<group>"; };
+		49F4D90D1ED889D200CE9282 /* ProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProgressHUD.framework; path = "Pods/../build/Debug-iphoneos/ProgressHUD/ProgressHUD.framework"; sourceTree = "<group>"; };
 		DEB900736C70589A9373BE3D /* Pods-TinderClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderClone.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinderClone/Pods-TinderClone.release.xcconfig"; sourceTree = "<group>"; };
 		E484E79807AD79426F65E781 /* Pods-TinderClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderClone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinderClone/Pods-TinderClone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49F4D90E1ED889D200CE9282 /* ProgressHUD.framework in Frameworks */,
+				49F4D90C1ED889CC00CE9282 /* Fusuma.framework in Frameworks */,
 				490EA3FF1ED722E80031ADC5 /* FBSDKCoreKit.framework in Frameworks */,
 				490EA3F51ED716590031ADC5 /* GTMSessionFetcher.framework in Frameworks */,
 				49D488371ED72AC600A64CDA /* FBSDKLoginKit.framework in Frameworks */,
@@ -97,7 +109,11 @@
 				490EA3C91ED6DB720031ADC5 /* Profile */,
 				490EA3BF1ED6D3E50031ADC5 /* LaunchScreen.storyboard */,
 				490EA3D41ED6F0400031ADC5 /* GoogleService-Info.plist */,
+				49CD9AB31ED98F1C00763D5E /* ProgressHUD.bundle */,
+				49CD9AB41ED98F1C00763D5E /* ProgressHUD.h */,
+				49CD9AB51ED98F1C00763D5E /* ProgressHUD.m */,
 				490EA3C21ED6D3E50031ADC5 /* Info.plist */,
+				49CD9AB21ED98F1C00763D5E /* TinderClone-Bridging-Header.h */,
 			);
 			path = TinderClone;
 			sourceTree = "<group>";
@@ -125,6 +141,8 @@
 		4AAA3DDEEEA557932E535CBA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49F4D90D1ED889D200CE9282 /* ProgressHUD.framework */,
+				49F4D90B1ED889CC00CE9282 /* Fusuma.framework */,
 				49D4883C1ED72B1C00A64CDA /* Bolts.framework */,
 				49D488381ED72AE100A64CDA /* FacebookSDKStrings.bundle */,
 				49D488361ED72AC600A64CDA /* FBSDKLoginKit.framework */,
@@ -182,6 +200,7 @@
 					490EA3B21ED6D3E50031ADC5 = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = KB93Y7F453;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -211,6 +230,7 @@
 			files = (
 				490EA3C11ED6D3E50031ADC5 /* LaunchScreen.storyboard in Resources */,
 				490EA3BE1ED6D3E50031ADC5 /* Assets.xcassets in Resources */,
+				49CD9AB61ED98F1C00763D5E /* ProgressHUD.bundle in Resources */,
 				490EA3D51ED6F0400031ADC5 /* GoogleService-Info.plist in Resources */,
 				49D488391ED72AE100A64CDA /* FacebookSDKStrings.bundle in Resources */,
 				490EA3BC1ED6D3E50031ADC5 /* Main.storyboard in Resources */,
@@ -248,7 +268,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		EB935924D9F08C24A375C2C5 /* [CP] Copy Pods Resources */ = {
@@ -273,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49CD9AB71ED98F1C00763D5E /* ProgressHUD.m in Sources */,
 				490EA3CB1ED6DBAA0031ADC5 /* ProfileViewController.swift in Sources */,
 				490EA3B91ED6D3E50031ADC5 /* ViewController.swift in Sources */,
 				490EA3D11ED6DE750031ADC5 /* MatchesViewController.swift in Sources */,
@@ -402,6 +423,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = KB93Y7F453;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -413,11 +435,14 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/GoogleToolboxForMac",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/GTMSessionFetcher",
 					/Users/TheWeeknd/Documents/FacebookSDK,
+					"$(PROJECT_DIR)/build/Debug-iphoneos/ProgressHUD",
 				);
 				INFOPLIST_FILE = TinderClone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Othman.TinderClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TinderClone/TinderClone-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				SYSTEM_FRAMEWORK_SEARCH_PATHS = "";
 			};
@@ -429,6 +454,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = KB93Y7F453;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -440,11 +466,13 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/GoogleToolboxForMac",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/GTMSessionFetcher",
 					/Users/TheWeeknd/Documents/FacebookSDK,
+					"$(PROJECT_DIR)/build/Debug-iphoneos/ProgressHUD",
 				);
 				INFOPLIST_FILE = TinderClone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Othman.TinderClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TinderClone/TinderClone-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				SYSTEM_FRAMEWORK_SEARCH_PATHS = "";
 			};
