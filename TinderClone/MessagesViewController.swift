@@ -25,8 +25,18 @@ class MessagesViewController: JSQMessagesViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.senderId = "1234"
-        self.senderDisplayName = "TEST"
+        observeMessages()
+        self.navigationItem.title="New Message"
+        if let currentUser = Auth.auth().currentUser{
+            
+            self.senderId = currentUser.uid
+            self.senderDisplayName = "\(currentUser.displayName!)"
+            
+            
+        }
+        
+//        self.senderId = "1234"
+//        self.senderDisplayName = "TEST"
         // Do any additional setup after loading the view.
     }
 
@@ -44,7 +54,7 @@ class MessagesViewController: JSQMessagesViewController {
             if let dict = snapshot.value as? [String: AnyObject]
             {
                 print("@@@@@\(dict)")
-                let avatarUrl = dict["profileUrl"] as! String
+              //  let avatarUrl = dict["profileUrl"] as! String
                 
                 
             }
@@ -52,7 +62,7 @@ class MessagesViewController: JSQMessagesViewController {
     }
     
     func observeMessages(){
-        messageRef.observe(.childAdded, with: {snapshot in
+        Database.database().reference().child("messages").observe(.childAdded, with: {snapshot in
             if let dict = snapshot.value as? [String: AnyObject]{
                 // let mediaType = dict["MediaType"] as! String
                 let senderId = dict["senderId"] as! String
@@ -60,11 +70,7 @@ class MessagesViewController: JSQMessagesViewController {
                 let text = dict["text"] as? String
                 
                 self.observeUsers(id: senderId)
-                
                 self.messages.append(JSQMessage(senderId: senderId, displayName: senderName, text: text))
-           
-                
-                
                 self.collectionView.reloadData()
             }
         })

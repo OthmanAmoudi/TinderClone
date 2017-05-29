@@ -162,10 +162,14 @@ class ProfileViewController: UIViewController, FBSDKLoginButtonDelegate {
                 self.navigationItem.title = username
                 let data = NSData(contentsOf: photoURL!)
                 fbPic.image = UIImage(data: data! as Data)
-            
+            print("@@@@@@@@@-------------@@@@@@@@@")
+                print("\(photoURL!)")
             let graphRequest:FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"gender, name,email, birthday,friends,age_range"])
-            
-            
+                let userID: String = Auth.auth().currentUser!.uid
+                
+           
+          
+                
             graphRequest.start(completionHandler: { (connection, result, error) -> Void in
                 
                 if ((error) != nil){
@@ -173,46 +177,72 @@ class ProfileViewController: UIViewController, FBSDKLoginButtonDelegate {
                 }
                 else {
                     self.dict = result as! NSDictionary
-                    var username = self.dict["name"] as? String
-                    var gender = self.dict["gender"] as? String
-                    //var age = self.dict["age_range"] as? String
+                    var usernameFB = self.dict["name"] as? String
+                    var genderFB = self.dict["gender"] as? String
+                    var ageFB = self.dict["min"] as? Int
                     //var friends = self.dict["friends"] as? [String]
-                    var email = self.dict["email"] as? String
-                    
-                    let ref = Database.database().reference()
-                    let postReference = ref.child("users")
+                    var emailFB = self.dict["email"] as? String
                     let userID: String = Auth.auth().currentUser!.uid
-                    let newPostId = postReference.childByAutoId()
-                    let newPostReference = postReference.child(userID)
+
+                    print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+                    print(genderFB)
                     
                     
-                    newPostReference.setValue(["Name":username,"Gender":gender,"userFIRid": userID,"email": email,"FB result":result], withCompletionBlock: {
-                        (error, ref) in
-                        if error != nil {
-                            //ProgressHUD.showError
-                            print(error!.localizedDescription)
-                        }
-                        else{
-                            self.genderLabel.text=gender
-                            Database.database().reference().child("users").child(userID).child("FB result").child("age_range").child("min").observeSingleEvent(of: .value, with: { (snapshot) in
-                                
-                                var myval = snapshot.value! as! Int
-                                var mystring = "\(myval)"
-                                print(mystring)
-                                self.ageLabel.text = mystring
-                            
-                            })
-                            Database.database().reference().child("users").child(userID).child("FB result").child("friends").child("summary").child("total_count").observeSingleEvent(of: .value, with: { (snapshot) in
-                                var myval2 = snapshot.value! as! Int
-                                var mystring2 = "\(myval2)"
-                                print(mystring2)
-                                self.FrinedsNum.text = mystring2
-                            })
+                    
+                    Database.database().reference().child("users").child(userID).child("FB result").child("friends").child("summary").child("total_count").observeSingleEvent(of: .value, with: { (snapshot) in
+                        var myval2 = snapshot.value! as! Int
+                        var mystring2 = "\(myval2)"
+                        print(mystring2)
+                        self.FrinedsNum.text = mystring2
+                        self.genderLabel.text=genderFB
+                    })
+                    
+                    
+                    Database.database().reference().child("users").child(userID).child("FB result").child("age_range").child("min").observeSingleEvent(of: .value, with: { (snapshot) in
+                        
+                        var myval = snapshot.value! as! Int
+                        var mystring = "\(myval)"
+                        print(mystring)
+                        self.ageLabel.text = mystring
+                        let ref = Database.database().reference()
+                        let postReference = ref.child("users")
+                        //                let userID: String = Auth.auth().currentUser!.uid
+                        let newPostId = postReference.childByAutoId()
+                        let newPostReference = postReference.child(userID)
+                        
+                        
+                        newPostReference.setValue(["photoURL":"\(photoURL!)","age":self.ageLabel.text,"name":usernameFB,"Gender":genderFB,"userFIRid": userID,"email": emailFB,"FB result":result], withCompletionBlock: {
+                            (error, ref) in
+                            if error != nil {
+                                //ProgressHUD.showError
+                                print(error!.localizedDescription)
+                            }
+                            else{}
+                        
+                    })
+    
+                 
+//
+//                            Database.database().reference().child("users").child(userID).child("FB result").child("age_range").child("min").observeSingleEvent(of: .value, with: { (snapshot) in
+//                                
+//                                var myval = snapshot.value! as! Int
+//                                var mystring = "\(myval)"
+//                                print(mystring)
+//                                self.ageLabel.text = mystring
+//                            
+//                            })
+//                            Database.database().reference().child("users").child(userID).child("FB result").child("friends").child("summary").child("total_count").observeSingleEvent(of: .value, with: { (snapshot) in
+//                                var myval2 = snapshot.value! as! Int
+//                                var mystring2 = "\(myval2)"
+//                                print(mystring2)
+//                                self.FrinedsNum.text = mystring2
+//                                self.genderLabel.text=genderFB
+//                            })
                             
                             //ProgressHUD.showSuccess("Success")
                             //self.clean()
                             //self.tabBarController?.selectedIndex=0
-                        }
+  //                      }
                     })
                     
                     
@@ -241,7 +271,7 @@ class ProfileViewController: UIViewController, FBSDKLoginButtonDelegate {
         let newPostId = postReference.childByAutoId()
         let newPostReference = postReference.child(userID)
         let emptyStr = NSNull()
-        newPostReference.setValue(["caption":emptyStr,"photoURL":emptyStr,"photoURL2":emptyStr], withCompletionBlock: {
+        newPostReference.setValue(["gender":emptyStr,"name":emptyStr,"age":emptyStr,"caption":emptyStr,"photoURL":emptyStr,"photoURL2":emptyStr], withCompletionBlock: {
             (error, ref) in
             if error != nil {
                 ProgressHUD.showError(error!.localizedDescription)

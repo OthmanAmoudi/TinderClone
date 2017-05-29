@@ -28,14 +28,14 @@ observeUsers()
     }
 
     func observeUsers(){
-        Database.database().reference().child("posts").observe(.childAdded, with: {(usersSnap) in
-            Database.database().reference().child("posts").child(usersSnap.key).observe(.value, with: {(aUserSnap) in
+        Database.database().reference().child("users").observe(.childAdded, with: {(usersSnap) in
+            Database.database().reference().child("users").child(usersSnap.key).observe(.value, with: {(aUserSnap) in
         
-            if let dict = aUserSnap.value as? [String: AnyObject]{
+            if let dict = aUserSnap.value as? [String: Any]{
                 print("@@@@@\(dict)")
-                let username = dict["name"] as! String
+                let username = dict["name"] as? String
              //   let avatarUrl = dict["profileUrl"] as! String
-                self.postCap.append(username)
+                self.postCap.append(username!)
                 self.tableView.reloadData()
             }
             

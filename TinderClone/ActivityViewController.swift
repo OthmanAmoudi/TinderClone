@@ -39,7 +39,7 @@ class ActivityViewController: UIViewController {
             Database.database().reference().child("posts").child(usersSnap.key).observe(.value, with: {(aUserSnap) in
                 print("%%%%%%%%%%%%%%")
                 if let dictionary = usersSnap.value as? [String: Any]{
-                    let age = dictionary["age"] as? Int
+                    let age = dictionary["age"] as? String
                     let caption = dictionary["caption"] as? String
                     let gender = dictionary["gender"] as? String
                     let name = dictionary["name"] as? String
