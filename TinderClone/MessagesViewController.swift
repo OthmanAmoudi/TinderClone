@@ -101,9 +101,9 @@ class MessagesViewController: JSQMessagesViewController {
         print(senderId)
         print(senderDisplayName)
         
-        //        messages.append(JSQMessage(senderId: senderId, displayName: senderDisplayName, text: text))
-        //        collectionView.reloadData()
-        //        print(messages)
+            messages.append(JSQMessage(senderId: senderId, displayName: senderDisplayName, text: text))
+                collectionView.reloadData()
+            print(messages)
         
         let messageData = ["text": text, "senderId": senderId, "senderName": senderDisplayName, "Media Type": "text message"]
         
