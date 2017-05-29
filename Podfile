@@ -12,6 +12,7 @@ pod ‘Firebase/Storage’
 pod ‘Firebase/Database’
 pod ‘Fusuma‘
 pod ‘ProgressHUD‘
+pod ‘JSQMessagesViewController’
 
   # Pods for TinderClone
 

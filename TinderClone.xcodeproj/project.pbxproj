@@ -28,6 +28,10 @@
 		49D4883D1ED72B1C00A64CDA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D4883C1ED72B1C00A64CDA /* Bolts.framework */; };
 		49F4D90C1ED889CC00CE9282 /* Fusuma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F4D90B1ED889CC00CE9282 /* Fusuma.framework */; };
 		49F4D90E1ED889D200CE9282 /* ProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F4D90D1ED889D200CE9282 /* ProgressHUD.framework */; };
+		49FB1F811EDB6D420087D302 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FB1F801EDB6D420087D302 /* User.swift */; };
+		49FB1F831EDC39FE0087D302 /* JSQMessagesViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49FB1F821EDC39FE0087D302 /* JSQMessagesViewController.framework */; };
+		49FB1F851EDC3A040087D302 /* JSQSystemSoundPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49FB1F841EDC3A040087D302 /* JSQSystemSoundPlayer.framework */; };
+		49FB1F871EDC3C5B0087D302 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FB1F861EDC3C5B0087D302 /* MessagesViewController.swift */; };
 		4C35A835A2DDD287393031C8 /* Pods_TinderClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2841C0681C427CAF05DA9437 /* Pods_TinderClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +62,10 @@
 		49D4883C1ED72B1C00A64CDA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../../FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
 		49F4D90B1ED889CC00CE9282 /* Fusuma.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fusuma.framework; path = "../../../Library/Developer/Xcode/DerivedData/TinderClone-arbiujyzhpjoldakktligwyqgfpj/Build/Products/Debug-iphonesimulator/Fusuma/Fusuma.framework"; sourceTree = "<group>"; };
 		49F4D90D1ED889D200CE9282 /* ProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProgressHUD.framework; path = "Pods/../build/Debug-iphoneos/ProgressHUD/ProgressHUD.framework"; sourceTree = "<group>"; };
+		49FB1F801EDB6D420087D302 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		49FB1F821EDC39FE0087D302 /* JSQMessagesViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSQMessagesViewController.framework; path = "Pods/../build/Debug-iphoneos/JSQMessagesViewController/JSQMessagesViewController.framework"; sourceTree = "<group>"; };
+		49FB1F841EDC3A040087D302 /* JSQSystemSoundPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSQSystemSoundPlayer.framework; path = "Pods/../build/Debug-iphoneos/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework"; sourceTree = "<group>"; };
+		49FB1F861EDC3C5B0087D302 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		DEB900736C70589A9373BE3D /* Pods-TinderClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderClone.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinderClone/Pods-TinderClone.release.xcconfig"; sourceTree = "<group>"; };
 		E484E79807AD79426F65E781 /* Pods-TinderClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinderClone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinderClone/Pods-TinderClone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49FB1F851EDC3A040087D302 /* JSQSystemSoundPlayer.framework in Frameworks */,
+				49FB1F831EDC39FE0087D302 /* JSQMessagesViewController.framework in Frameworks */,
 				49F4D90E1ED889D200CE9282 /* ProgressHUD.framework in Frameworks */,
 				49F4D90C1ED889CC00CE9282 /* Fusuma.framework in Frameworks */,
 				490EA3FF1ED722E80031ADC5 /* FBSDKCoreKit.framework in Frameworks */,
@@ -133,7 +143,9 @@
 				490EA3D21ED6E3F20031ADC5 /* Activity.storyboard */,
 				490EA3CA1ED6DBAA0031ADC5 /* ProfileViewController.swift */,
 				490EA3CE1ED6DE590031ADC5 /* ActivityViewController.swift */,
+				49FB1F801EDB6D420087D302 /* User.swift */,
 				490EA3D01ED6DE750031ADC5 /* MatchesViewController.swift */,
+				49FB1F861EDC3C5B0087D302 /* MessagesViewController.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -141,6 +153,8 @@
 		4AAA3DDEEEA557932E535CBA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49FB1F841EDC3A040087D302 /* JSQSystemSoundPlayer.framework */,
+				49FB1F821EDC39FE0087D302 /* JSQMessagesViewController.framework */,
 				49F4D90D1ED889D200CE9282 /* ProgressHUD.framework */,
 				49F4D90B1ED889CC00CE9282 /* Fusuma.framework */,
 				49D4883C1ED72B1C00A64CDA /* Bolts.framework */,
@@ -299,6 +313,8 @@
 				490EA3D11ED6DE750031ADC5 /* MatchesViewController.swift in Sources */,
 				490EA3B71ED6D3E50031ADC5 /* AppDelegate.swift in Sources */,
 				490EA3CF1ED6DE590031ADC5 /* ActivityViewController.swift in Sources */,
+				49FB1F871EDC3C5B0087D302 /* MessagesViewController.swift in Sources */,
+				49FB1F811EDB6D420087D302 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +452,8 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/GTMSessionFetcher",
 					/Users/TheWeeknd/Documents/FacebookSDK,
 					"$(PROJECT_DIR)/build/Debug-iphoneos/ProgressHUD",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/JSQMessagesViewController",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/JSQSystemSoundPlayer",
 				);
 				INFOPLIST_FILE = TinderClone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -467,6 +485,8 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/GTMSessionFetcher",
 					/Users/TheWeeknd/Documents/FacebookSDK,
 					"$(PROJECT_DIR)/build/Debug-iphoneos/ProgressHUD",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/JSQMessagesViewController",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/JSQSystemSoundPlayer",
 				);
 				INFOPLIST_FILE = TinderClone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
