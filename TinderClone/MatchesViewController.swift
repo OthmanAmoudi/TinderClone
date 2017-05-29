@@ -12,29 +12,34 @@ import FirebaseDatabase
 class MatchesViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
 
     
-   var uname = ""
-  // var senderId: String
+    var postCap = [String]()
+    var postPicurl = [String]()
+    var postPic = [UIImage]()
+    
+    // var senderId: String
   //  var senderDisplayName: String
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+observeUsers()
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
     }
 
-    func observeUsers(id: String){
-        Database.database().reference().child("posts").child(id).observe(.value, with: {
-            snapshot in
-            if let dict = snapshot.value as? [String: AnyObject]
-            {
+    func observeUsers(){
+        Database.database().reference().child("posts").observe(.childAdded, with: {(usersSnap) in
+            Database.database().reference().child("posts").child(usersSnap.key).observe(.value, with: {(aUserSnap) in
+        
+            if let dict = aUserSnap.value as? [String: AnyObject]{
                 print("@@@@@\(dict)")
                 let username = dict["name"] as! String
-                let avatarUrl = dict["profileUrl"] as! String
-                self.uname = username
-                
+             //   let avatarUrl = dict["profileUrl"] as! String
+                self.postCap.append(username)
+                self.tableView.reloadData()
             }
+            
+        })
         })
     }
 
@@ -53,13 +58,14 @@ class MatchesViewController: UIViewController,UITableViewDataSource,UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return postCap.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        cell?.textLabel?.text = uname
-        return cell!
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        cell.textLabel?.text = postCap[indexPath.row]
+        return cell
     }
 
 }

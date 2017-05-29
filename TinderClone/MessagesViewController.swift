@@ -16,10 +16,17 @@ class MessagesViewController: JSQMessagesViewController {
     var messageRef = Database.database().reference().child("messages")
     var avatarDict = [String: JSQMessagesAvatarImage]()
 
+
+    @IBAction func unmatchBtn(_ sender: Any) {
+    }
     
+    @IBAction func backBtn(_ sender: Any) {
+         dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.senderId = "1234"
+        self.senderDisplayName = "TEST"
         // Do any additional setup after loading the view.
     }
 
@@ -27,12 +34,8 @@ class MessagesViewController: JSQMessagesViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func setup() {
-        self.senderId = "1234"
-        self.senderDisplayName = "TEST"
-    }
+    
     override func viewWillAppear(_ animated: Bool) {
-        setup()
     }
 
     func observeUsers(id: String){
