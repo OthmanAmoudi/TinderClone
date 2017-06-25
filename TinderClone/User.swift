@@ -19,18 +19,12 @@ class User{
     var caption: String?
     var photoURL: String?
     
-    init?(snapshot: DataSnapshot){
-        
-        self.uid = snapshot.key
-            if let dictionary = snapshot.value as? [String: Any]{
-                let caption = dictionary["caption"] as? String
-                let age = dictionary["age"] as? String
-                let name = dictionary["name"] as? String
-                let gender = dictionary["gender"] as? String
-                let picURL = dictionary["photoURL"] as? String
-                let picURL2 = dictionary["photoURL2"] as? String
-            
-            
-            }
-        }
+    init(uidString:String,nameString:String,ageNum:String,genderString:String,captionString:String,photoURLString:String){
+        uid = uidString
+        name = nameString
+        age = ageNum
+        gender = genderString
+        caption = captionString
+        photoURL = photoURLString
+    }
     }
