@@ -32,18 +32,73 @@ class ActivityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getMatch()
-        //loadUsers()
         
+       // let mylabel = UILabel(frame:CGRect(x: self.view.bounds.width/2-100, y: self.view.bounds.height/2-50, width: 200, height: 100))
+        
+           // mylabel.text = "DRAGEER"
+        
+        //    mylabel.textAlignment = NSTextAlignment.center
+        
+         //   view.addSubview(mylabel)
+        
+        let geture = UIPanGestureRecognizer(target: self, action: #selector(self.wasDragged(gestureRecognizer:)))
+        
+        matchPhoto.addGestureRecognizer(geture)
+        
+        getMatch()
+        
+        matchPhoto.isUserInteractionEnabled=true
+        
+        //loadUsers()
         //nameLabel.text = matches
     }
-    
+    func wasDragged(gestureRecognizer: UIPanGestureRecognizer){
+        let translation = gestureRecognizer.translation(in: view)
+        //print(translation)
+        let mylabel = gestureRecognizer.view!
+        mylabel.center = CGPoint(x: self.view.bounds.width/2 + translation.x, y: self.view.bounds.height/2 + translation.y)
+        
+        if gestureRecognizer.state == UIGestureRecognizerState.ended{
+            if mylabel.center.x < 100 {
+                print("Disliked")
+                getMatch()
+            }
+            else if mylabel.center.x > self.view.bounds.width - 100{
+                print("Liked")
+                getMatch()
+            }
+            mylabel.center = CGPoint(x: self.view.bounds.width/2, y: self.view.bounds.height/2)
+        }
+        
+        
+    }
     @IBOutlet weak var likeBtn: UIButton!
     
     @IBAction func likeDidPressed(_ sender: Any) {
         print("\(nameLabel.text!) liked")
         getMatch()
     }
+    
+    @IBAction func disLikedDidPress(_ sender: Any) {
+        print("\(nameLabel.text!) Disliked")
+        getMatch()
+    }
+    
+    @IBAction func superLiked(_ sender: UIPanGestureRecognizer) {
+        print("\(nameLabel.text!) super liked")
+        getMatch()
+    }
+//    
+//        let matchPhoto = (sender as AnyObject).view!
+//        let point = (sender as AnyObject).translation(in:view)
+//        matchPhoto.center = CGPoint(x: view.center.x + point.x, y: view.center.y + point.y)
+//        UIView.animate(withDuration: 0.2) {
+//            matchPhoto.center = self.view.center
+//        }
+//        
+//        print("Moving...")
+//    
+  
 //    func loadUsers(){
 //        
 //        let userID: String = Auth.auth().currentUser!.uid
@@ -164,50 +219,47 @@ class ActivityViewController: UIViewController {
 //                    let name2 = dictionary["name"] as? String
 //                    let picURL2 = dictionary["photoURL"] as? String
 //                    
-               //     for(_,value) in dictionary!{
-                    if let dictionary = snapshot.value as? [String: Any]{
-
-                     // let likedby = value["Liked By"] as? String
-                        let age = dictionary["age"] as? String
-                        let caption = dictionary["caption"] as? String
-                        let gender = dictionary["gender"] as? String
-                        let name = dictionary["name"] as? String
-                        let picURL = dictionary["photoURL"] as? String
+                 //   for(_,value) in dictionary!{
+//                        if (snapshot.value["Liked By"] as? String) != nil{
+//                            print("Fuked up shit is here")
+//                            generateNum()
+//                        }
+//                        else{
+                            if let dictionary = snapshot.value as? [String: Any]{
+                                
+                                let likedby = dictionary["Liked By"] as? String
+                                let age = dictionary["age"] as? String
+                                let caption = dictionary["caption"] as? String
+                                let gender = dictionary["gender"] as? String
+                                let name = dictionary["name"] as? String
+                                let picURL = dictionary["photoURL"] as? String
+                                
+                                
+                                let storage = Storage.storage()
+                                let photoRef = storage.reference(forURL: picURL!)
+                                // Fetch the download URL
+                                photoRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                                    if let error = error {
+                                        print(error.localizedDescription)
+                                    } else {
+                                        // Data for "images/island.jpg" is returned
+                                        let image = UIImage(data: data!)
+                                        self.matchPhoto.image = image
+                                    }
+                                }
+                                
+                                print("||||||")
+                                
+                                self.nameLabel.text = name
+                                self.genderLabel.text = gender
+                                // let ageStr = "\(age)"
+                                self.ageRangeLabel.text = age
+                                self.bioText.text = caption
+                                print("my name is: \(name!) and im: \(age!) years old and was liked by\(likedby)")
                         
-
-
-                      
-                        let storage = Storage.storage()
-                        let photoRef = storage.reference(forURL: picURL!)
-                        
-                        // Fetch the download URL
-                        photoRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-                            if let error = error {
-                                print(error.localizedDescription)
-                            } else {
-                                // Data for "images/island.jpg" is returned
-                                let image = UIImage(data: data!)
-                                self.matchPhoto.image = image
-                            }
-                        }
-                        
-                        
-                        print("||||||")
-                        
-                        self.nameLabel.text = name
-                        self.genderLabel.text = gender
-                        // let ageStr = "\(age)"
-                        self.ageRangeLabel.text = age
-                        self.bioText.text = caption
-                        print("my name is: \(name!) and im: \(age!) years old")
-                        }
-                    
-                
-                    
+                    }
                 })
                 
-            
-            
             })
         }
 
